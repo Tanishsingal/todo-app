@@ -1,0 +1,36 @@
+<!-- // when the project is build in react application we run it and close the server we still get the full html,css,js  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // button is component and count->state
+        let state={
+            count:0
+        }
+        //componet
+        function change(){
+            state.count++;
+            but()
+        }//rerender
+        function but(){
+            let a=document.querySelector('.box');
+            a.innerHTML="";
+            let b=create()
+            a.appendChild(b);
+        }//component->which take state or props as input and return html as output 
+        function create(){
+            let b=document.createElement("button")
+            b.setAttribute('onclick','change()');
+            b.innerHTML=`Counter ${state.count}`
+            return b;
+        }
+        but()
+    </script>
+</body>
+</html>
